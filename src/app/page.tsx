@@ -1,3 +1,6 @@
+"use client"
+import { useState, useEffect } from 'react';
+
 import Image from "next/image";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import illustraion from "../../public/main_bg.png"
@@ -11,6 +14,28 @@ import contactLogo from "../../public/logo_contact.png"
 
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 100; // You can adjust the scroll threshold as needed
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const navbarClasses = `flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 
+    md:flex-row md:justify-between md:items-center md:pt-6 md:pb-2 md:px-16 
+    lg:flex-row lg:justify-between lg:items-center lg:pt-4 lg:pb-2 lg:px-24 
+    xl:flex-row xl:justify-between xl:items-center xl:pt-4 xl:pb-2 xl:px-32 text-white 
+    w-full z-50 sticky top-0 transition-all ${scrolled ? 'bg-black' : 'bg-transparent'}`;
+
   const styles = {
     landingImage: {
       backgroundImage: "url('/main_bg.png')", backgroundSize: "cover", backgroundPosition: "center"
@@ -31,7 +56,7 @@ export default function Home() {
 
     <main>
       {/* Navbar */}
-      <nav style={{ zIndex: 1 }} className="flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 md:flex-row md:justify-between md:items-center md:pt-12 md:pb-6 md:px-16 lg:flex-row lg:justify-between lg:items-center lg:pt-16 lg:pb-8 lg:px-24 xl:flex-row xl:justify-between xl:items-center xl:pt-20 xl:pb-10 xl:px-32 text-white w-full sticky top-0 sm:bg-transparent md:bg-transparent lg:bg-transparent xl:bg-transparent">
+      <nav className={navbarClasses}>
         <div className="flex items-center mb-4 md:mb-0 lg:mb-0 xl:mb-0">
           <Image src={navLogo} alt="Logo" width={200} height={50} />
         </div>
