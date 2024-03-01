@@ -48,13 +48,17 @@ const Contact = () => {
             {/* Social Icons Row */}
             <div className="flex items-center space-x-8 mt-4 pt-10 justify-center md:justify-start">
                 {/* ArtStation Icon */}
-                <Image src="/artstation.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="ArtStation" width={30} height={30} />
-
+                <a href="https://www.artstation.com/saadirfan" target="_blank" rel="noopener noreferrer" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+                    <Image src="/artstation.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="ArtStation" width={30} height={30} />
+                </a>
                 {/* LinkedIn Icon */}
-                <Image src="/linkedin.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="LinkedIn" width={30} height={30} />
-
+                <a href="https://www.linkedin.com/in/saad-irfan-77a5481a/" target="_blank" rel="noopener noreferrer" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+                    <Image src="/linkedin.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="LinkedIn" width={30} height={30} />
+                </a>
                 {/* Instagram Icon */}
-                <Image src="/instagram.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="Instagram" width={30} height={30} />
+                <a href="https://www.instagram.com/saadvenomx" target="_blank" rel="noopener noreferrer" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+                    <Image src="/instagram.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="Instagram" width={30} height={30} />
+                </a>
             </div>
         </div>
     )
