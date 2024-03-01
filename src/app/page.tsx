@@ -16,10 +16,10 @@ export default function Home() {
       backgroundImage: "url('/main_bg.png')", backgroundSize: "cover", backgroundPosition: "center"
     },
     portfolioFooterBg: {
-      backgroundColor: "rgba(24, 24, 24, 0.71)", backdropFilter: "blur(5px)", 
+      backgroundColor: "rgba(24, 24, 24, 0.71)", backdropFilter: "blur(5px)",
     },
     portfolioHeading: {
-      display: "inline-block", 
+      display: "inline-block",
       borderBottom: "4px solid #DA0037"
     },
 
@@ -31,30 +31,31 @@ export default function Home() {
 
     <main>
       {/* Navbar */}
-      <nav style={{zIndex: 1}} className="flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 md:flex-row md:justify-between md:items-center md:pt-12 md:pb-6 md:px-16 lg:flex-row lg:justify-between lg:items-center lg:pt-16 lg:pb-8 lg:px-24 xl:flex-row xl:justify-between xl:items-center xl:pt-20 xl:pb-10 xl:px-32 text-white w-full sticky top-0 sm:bg-transparent md:bg-transparent lg:bg-transparent xl:bg-transparent">
-          <div className="flex items-center mb-4 md:mb-0 lg:mb-0 xl:mb-0">
-            <Image src={navLogo} alt="Logo" width={200} height={50} />
-          </div>
-          <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center h-full">
-            <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Portfolio</a>
-            <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">About</a>
-            <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Contact</a>
-          </div>
-        </nav>
-        {/* Text and line at the bottom */}
-        <div className="flex flex-col items-center w-full justify-end pb-4 text-center">
-          <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold">Edit. Animate. Create.</p>
-          <div className="w-2/3 border-b border-red mx-auto" style={{ borderWidth: 2 }} />
+      <nav style={{ zIndex: 1 }} className="flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 md:flex-row md:justify-between md:items-center md:pt-12 md:pb-6 md:px-16 lg:flex-row lg:justify-between lg:items-center lg:pt-16 lg:pb-8 lg:px-24 xl:flex-row xl:justify-between xl:items-center xl:pt-20 xl:pb-10 xl:px-32 text-white w-full sticky top-0 sm:bg-transparent md:bg-transparent lg:bg-transparent xl:bg-transparent">
+        <div className="flex items-center mb-4 md:mb-0 lg:mb-0 xl:mb-0">
+          <Image src={navLogo} alt="Logo" width={200} height={50} />
         </div>
+        <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center h-full">
+          <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Portfolio</a>
+          <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">About</a>
+          <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Contact</a>
+        </div>
+      </nav>
+
       {/* Landing */}
       <div className="flex flex-col items-center justify-between min-h-screen">
-      <Image
-        src={illustraion}
-        alt="Your Image Alt Text"
-        layout="fill"
-        objectFit="cover"
-      />
-        
+        <Image
+          src={illustraion}
+          alt="Your Image Alt Text"
+          layout="fill"
+          objectFit="cover"
+        />
+        {/* Text and line at the bottom */}
+        <div className="absolute bottom-0 left-0 right-0 text-center">
+          <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold text-white">Edit. Animate. Create.</p>
+          <div className="w-2/3 border-b border-red mx-auto" style={{ borderWidth: 2 }} />
+        </div>
+
       </div>
 
       {/* Portfolio */}
@@ -68,7 +69,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pt-4" style={styles.centerContent}>
           <div className="relative cursor-pointer">
-          <Image className="object-cover object-center w-full h-full rounded-lg" src={illustraion} alt="" />
+            <Image className="object-cover object-center w-full h-full rounded-lg" src={illustraion} alt="" />
             <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
               <div className="text-center md:text-right lg:mr-5">
                 <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
