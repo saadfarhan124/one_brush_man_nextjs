@@ -6,14 +6,15 @@ export default function Home() {
       backgroundImage: "url('/main_bg.png')", backgroundSize: "cover", backgroundPosition: "center"
     },
     portfolioFooterBg: {
-      backgroundColor: "rgba(24, 24, 24, 0.71)", backdropFilter: "blur(5px)", padding: "1rem"
+      backgroundColor: "rgba(24, 24, 24, 0.71)", backdropFilter: "blur(5px)", 
     },
     portfolioHeading: {
-      display: "inline-block", borderBottom: "4px solid #DA0037"
+      display: "inline-block", 
+      borderBottom: "4px solid #DA0037"
     },
 
     centerContent: {
-      paddingLeft: "20rem", paddingRight: "20rem"
+      paddingLeft: "25%", paddingRight: "25%"
     }
   }
   return (
@@ -50,10 +51,10 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pt-4" style={styles.centerContent}>
           <div className="relative cursor-pointer">
-            <img className="h-auto max-w-full rounded-lg " src="/main_bg.png" alt="" />
-            <div className="absolute bottom-0 right-0 w-full" style={styles.portfolioFooterBg}>
-              <div className="text-right mr-5">
-                <p className="text-white font-bold text-2xl" style={styles.portfolioHeading}>
+          <img className="object-cover object-center w-full h-full rounded-lg" src="/main_bg.png" alt="" />
+            <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
+              <div className="text-center md:text-right lg:mr-5">
+                <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
                   Illustration
                 </p>
               </div>
@@ -61,21 +62,21 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-12 gap-3">
-            <div className="col-span-8 relative cursor-pointer">
+            <div className="col-span-12 md:col-span-8 relative cursor-pointer">
               <img className="h-full max-w-full rounded-lg" src="/concept_art.png" alt="" />
-              <div className="absolute bottom-0 right-0 w-full" style={styles.portfolioFooterBg}>
-                <div className="text-right mr-5">
-                  <p className="text-white font-bold text-2xl" style={styles.portfolioHeading}>
+              <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
+                <div className="text-center md:text-right lg:mr-5">
+                  <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
                     Concept Art
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col-span-4 relative cursor-pointer">
+            <div className="col-span-12 md:col-span-4 relative cursor-pointer">
               <img className="h-full max-w-full rounded-lg" src="/comicbook.png" alt="" style={{ objectFit: "cover" }} />
-              <div className="absolute bottom-0 right-0 w-full" style={styles.portfolioFooterBg}>
+              <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
                 <div className="text-center">
-                  <p className="text-white font-bold text-2xl" style={styles.portfolioHeading}>
+                  <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
                     Comicbook
                   </p>
                 </div>
@@ -83,21 +84,21 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-12 gap-3">
-            <div className="col-span-5 relative cursor-pointer">
+            <div className="col-span-12 md:col-span-5 relative cursor-pointer">
               <img className="h-full max-w-full rounded-lg" src="/chracter_design.png" alt="" />
-              <div className="absolute bottom-0 right-0 w-full" style={styles.portfolioFooterBg}>
+              <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
                 <div className="text-center">
-                  <p className="text-white font-bold text-2xl" style={styles.portfolioHeading}>
+                  <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
                     Character Design
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col-span-7 relative cursor-pointer">
+            <div className="col-span-12 md:col-span-7 relative cursor-pointer">
               <img className="h-full max-w-full rounded-lg" src="/digital_sculpting.png" alt="" style={{ objectFit: "cover" }} />
-              <div className="absolute bottom-0 right-0 w-full" style={styles.portfolioFooterBg}>
-                <div className="text-right mr-5">
-                  <p className="text-white font-bold text-2xl" style={styles.portfolioHeading}>
+              <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
+                <div className="text-center md:text-right lg:mr-5">
+                  <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
                     Digital Sculpting
                   </p>
                 </div>
@@ -111,9 +112,9 @@ export default function Home() {
       {/* About  */}
       <div style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20">
         <div className="pt-20">
-          <p className="text-lg md:text-2xl lg:text-3xl xl:text-3xl mb-2 font-extrabold" style={styles.portfolioHeading}>Saad Irfan</p>
-          <p className="text-sm md:text-lg lg:text-xl xl:text-xl mb-2 font-normal	">Designer / Concept Artist</p>
-          <p className="text-base font-normal	leading-6	" style={{ color: 'rgba(255, 255, 255, 0.40)' }}>As an artist with a background in traditional, abstract, and concept art, as well as theater,
+          <p className="text-center md:text-left text-lg md:text-2xl lg:text-3xl xl:text-3xl mb-2 font-extrabold" style={{}}>Saad Irfan</p>
+          <p className="text-center md:text-left text-sm md:text-lg lg:text-xl xl:text-xl mb-2 font-normal	">Designer / Concept Artist</p>
+          <p className="text-center md:text-left text-base font-normal	leading-6	" style={{ color: 'rgba(255, 255, 255, 0.40)' }}>As an artist with a background in traditional, abstract, and concept art, as well as theater,
             I have a diverse range of experiences that inform my work. My skillset encompasses traditional and digital art, animation,
             and UI/UX engineering, using tools such as Figma, Adobe Creative Suite, and Blender.
             I am constantly exploring new technologies and techniques to expand my artistic expression and am currently focused on AI art.
@@ -126,7 +127,7 @@ export default function Home() {
         <div className="pt-20">
           <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold	">Get In Touch</p>
           <div className="grid grid-cols-12 gap-3 p-15 pt-10">
-            <div className="col-span-6 relative">
+            <div className="col-span-12 md:col-span-6 relative">
               {/* Name Input */}
               <div className="mb-4">
                 <label htmlFor="name" className="block text-white text-base font-normal mb-2">Name</label>
@@ -150,17 +151,17 @@ export default function Home() {
 
 
               {/* Submit Button */}
-              <div className="flex">
+              <div className="flex justify-center md:justify-start">
                 <button type="submit" className="bg-themegray text-white px-4 py-2 rounded-md hover:bg-red transition">Submit</button>
               </div>
             </div>
-            <div className="col-span-6 relative cursor-pointer flex items-center justify-center">
+            <div className="pt-5 md:pl-5  lg:pl-0 md:pt-0 col-span-12 md:col-span-6 relative cursor-pointer flex items-center lg:justify-center">
               <img className="w-60 rounded-lg" src="/logo_contact.png" alt="" />
             </div>
           </div>
         </div>
         {/* Social Icons Row */}
-        <div className="flex items-center space-x-8 mt-4 pt-10">
+        <div className="flex items-center space-x-8 mt-4 pt-10 justify-center md:justify-start">
           {/* ArtStation Icon */}
           <Image src="/artstation.svg" className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110" alt="ArtStation" width={30} height={30} />
 
@@ -180,3 +181,4 @@ export default function Home() {
 
 
 
+// filter: invert(13%) sepia(97%) saturate(5159%) hue-rotate(338deg) brightness(83%) contrast(109%)
