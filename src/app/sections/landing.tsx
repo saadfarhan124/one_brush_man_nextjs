@@ -1,16 +1,22 @@
-// pages/index.js
-import React from 'react';
-import Link from 'next/link';
+import Image from "next/image";
+import illustraion from "../../../public/main_bg.png";
 
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <Link href="/about">
-        <a>About Page</a>
-      </Link>
-    </div>
-  );
-};
+const Landing = () => {
+    return (
+        <div className="flex flex-col items-center justify-between min-h-screen">
+            <Image
+                src={illustraion}
+                alt="Your Image Alt Text"
+                layout="fill"
+                objectFit="cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 text-center">
+                <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold text-white">Edit. Animate. Create.</p>
+                <div className="w-2/3 border-b border-red mx-auto" style={{ borderWidth: 2 }} />
+            </div>
 
-export default HomePage;
+        </div>
+
+    )
+}
+export default Landing;
