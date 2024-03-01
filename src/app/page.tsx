@@ -30,11 +30,22 @@ export default function Home() {
     };
   }, []);
 
-  const navbarClasses = `flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 
-    md:flex-row md:justify-between md:items-center md:pt-6 md:pb-2 md:px-16 
-    lg:flex-row lg:justify-between lg:items-center lg:pt-4 lg:pb-2 lg:px-24 
-    xl:flex-row xl:justify-between xl:items-center xl:pt-4 xl:pb-2 xl:px-32 text-white 
-    w-full z-50 sticky top-0 transition-all ${scrolled ? 'bg-black' : 'bg-transparent'}`;
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    const navbar = document.querySelector('nav');
+
+    if (section && navbar) {
+      const offset = navbar.offsetHeight; // Adjust this value as needed
+      const offsetTop = section.offsetTop - offset;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  };
+
+  const navbarClasses = `flex flex-col items-center p-4 sm:pb-4 sm:px-8 
+    md:flex-row md:justify-between md:items-center md:pb-2 md:px-16 
+    lg:flex-row lg:justify-between lg:items-center lg:pb-2 lg:px-24 
+    xl:flex-row xl:justify-between xl:items-center xl:pb-2 xl:px-32 text-white 
+    w-full z-50 sticky top-0 transition-all ${scrolled ? 'bg-black pt-5' : 'bg-transparent pt-20'}`;
 
   const styles = {
     landingImage: {
@@ -61,9 +72,9 @@ export default function Home() {
           <Image src={navLogo} alt="Logo" width={200} height={50} />
         </div>
         <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center h-full">
-          <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Portfolio</a>
-          <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">About</a>
-          <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Contact</a>
+          <a onClick={() => scrollToSection("portfolio")} className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red cursor-pointer">Portfolio</a>
+          <a onClick={() => scrollToSection("about")} className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red cursor-pointer">About</a>
+          <a onClick={() => scrollToSection("contact")} className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red cursor-pointer">Contact</a>
         </div>
       </nav>
 
@@ -84,7 +95,7 @@ export default function Home() {
       </div>
 
       {/* Portfolio */}
-      <div>
+      <div id="portfolio">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col items-center w-full justify-endx pt-20 md:pt-10 lg:pt-10 xl:pt-10">
             <p className="text-xl md:text-2xl lg:text-4xl xl:text-4xl text-center mb-2 font-extrabold">Portfolio</p>
@@ -153,7 +164,7 @@ export default function Home() {
       </div>
 
       {/* About  */}
-      <div style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20">
+      <div id="about" style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20">
         <div className="pt-20">
           <p className="text-center md:text-left text-lg md:text-2xl lg:text-3xl xl:text-3xl mb-2 font-extrabold" style={{}}>Saad Irfan</p>
           <p className="text-center md:text-left text-sm md:text-lg lg:text-xl xl:text-xl mb-2 font-normal	">Designer / Concept Artist</p>
@@ -166,7 +177,7 @@ export default function Home() {
       </div>
 
       {/* Get In Touch  */}
-      <div style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20 pb-20">
+      <div id="contact" style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20 pb-20">
         <div className="pt-20">
           <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold	">Get In Touch</p>
           <div className="grid grid-cols-12 gap-3 p-15 pt-10">
