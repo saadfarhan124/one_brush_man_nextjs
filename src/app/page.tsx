@@ -1,5 +1,14 @@
 import Image from "next/image";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import illustraion from "../../public/main_bg.png"
+import conceptArt from "../../public/concept_art.png"
+import comicBook from "../../public/comicbook.png"
+import characterDesign from "../../public/chracter_design.png"
+import digitalSculpting from "../../public/digital_sculpting.png"
+import navLogo from "../../public/logo.png"
+import contactLogo from "../../public/logo_contact.png"
+
+
 
 export default function Home() {
   const styles = {
@@ -21,12 +30,10 @@ export default function Home() {
   return (
 
     <main>
-      {/* Landing */}
-      <div className="flex flex-col items-center justify-between min-h-screen" style={styles.landingImage}>
-        {/* Navbar */}
-        <nav className="flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 md:flex-row md:justify-between md:items-center md:pt-12 md:pb-6 md:px-16 lg:flex-row lg:justify-between lg:items-center lg:pt-16 lg:pb-8 lg:px-24 xl:flex-row xl:justify-between xl:items-center xl:pt-20 xl:pb-10 xl:px-32 text-white w-full sticky top-0 sm:bg-transparent md:bg-transparent lg:bg-transparent xl:bg-transparent">
+      {/* Navbar */}
+      <nav style={{zIndex: 1}} className="flex flex-col items-center p-4 sm:pt-8 sm:pb-4 sm:px-8 md:flex-row md:justify-between md:items-center md:pt-12 md:pb-6 md:px-16 lg:flex-row lg:justify-between lg:items-center lg:pt-16 lg:pb-8 lg:px-24 xl:flex-row xl:justify-between xl:items-center xl:pt-20 xl:pb-10 xl:px-32 text-white w-full sticky top-0 sm:bg-transparent md:bg-transparent lg:bg-transparent xl:bg-transparent">
           <div className="flex items-center mb-4 md:mb-0 lg:mb-0 xl:mb-0">
-            <Image src="/logo.png" alt="Logo" width={200} height={50} />
+            <Image src={navLogo} alt="Logo" width={200} height={50} />
           </div>
           <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row items-center h-full">
             <a href="#" className="mx-2 my-2 md:my-0 lg:my-0 xl:my-0 text-lg font-bold transition-all hover:text-red">Portfolio</a>
@@ -39,6 +46,15 @@ export default function Home() {
           <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold">Edit. Animate. Create.</p>
           <div className="w-2/3 border-b border-red mx-auto" style={{ borderWidth: 2 }} />
         </div>
+      {/* Landing */}
+      <div className="flex flex-col items-center justify-between min-h-screen">
+      <Image
+        src={illustraion}
+        alt="Your Image Alt Text"
+        layout="fill"
+        objectFit="cover"
+      />
+        
       </div>
 
       {/* Portfolio */}
@@ -52,7 +68,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pt-4" style={styles.centerContent}>
           <div className="relative cursor-pointer">
-          <img className="object-cover object-center w-full h-full rounded-lg" src="/main_bg.png" alt="" />
+          <Image className="object-cover object-center w-full h-full rounded-lg" src={illustraion} alt="" />
             <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
               <div className="text-center md:text-right lg:mr-5">
                 <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
@@ -64,7 +80,7 @@ export default function Home() {
 
           <div className="grid grid-cols-12 gap-3">
             <div className="col-span-12 md:col-span-8 relative cursor-pointer">
-              <img className="h-full max-w-full rounded-lg" src="/concept_art.png" alt="" />
+              <Image className="h-full max-w-full rounded-lg" src={conceptArt} alt="" />
               <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
                 <div className="text-center md:text-right lg:mr-5">
                   <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
@@ -74,7 +90,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-12 md:col-span-4 relative cursor-pointer">
-              <img className="h-full max-w-full rounded-lg" src="/comicbook.png" alt="" style={{ objectFit: "cover" }} />
+              <Image className="h-full max-w-full rounded-lg" src={comicBook} alt="" style={{ objectFit: "cover" }} />
               <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
                 <div className="text-center">
                   <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
@@ -86,7 +102,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-12 gap-3">
             <div className="col-span-12 md:col-span-5 relative cursor-pointer">
-              <img className="h-full max-w-full rounded-lg" src="/chracter_design.png" alt="" />
+              <Image className="h-full max-w-full rounded-lg" src={characterDesign} alt="" />
               <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
                 <div className="text-center">
                   <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
@@ -96,7 +112,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-12 md:col-span-7 relative cursor-pointer">
-              <img className="h-full max-w-full rounded-lg" src="/digital_sculpting.png" alt="" style={{ objectFit: "cover" }} />
+              <Image className="h-full max-w-full rounded-lg" src={digitalSculpting} alt="" style={{ objectFit: "cover" }} />
               <div className="absolute bottom-0 right-0 w-full md:p-5" style={styles.portfolioFooterBg}>
                 <div className="text-center md:text-right lg:mr-5">
                   <p className="text-white font-bold md:text-1xl lg:text-2xl" style={styles.portfolioHeading}>
@@ -157,7 +173,7 @@ export default function Home() {
               </div>
             </div>
             <div className="pt-5 md:pl-5  lg:pl-0 md:pt-0 col-span-12 md:col-span-6 relative cursor-pointer flex items-center lg:justify-center">
-              <img className="w-60 rounded-lg" src="/logo_contact.png" alt="" />
+              <Image className="w-60 rounded-lg" src={contactLogo} alt="" />
             </div>
           </div>
         </div>
@@ -176,6 +192,8 @@ export default function Home() {
       <footer className="bg-themedarkgray py-4 text-center">
         <p className="text-themegray">&copy; 2024 One Brush Man</p>
       </footer>
+      <SpeedInsights />
+
     </main>
   );
 }
