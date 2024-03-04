@@ -6,6 +6,8 @@ import bgTwo from "../../../../public/sculpting_bg/bg_2.png";
 import bgThree from "../../../../public/sculpting_bg/bg_3.png";
 import bgFour from "../../../../public/sculpting_bg/bg_4.png";
 import bgFive from "../../../../public/sculpting_bg/bg_5.png";
+import {TRANSITION_TIME} from "@/app/constants";
+
 
 const DigitalSculpting = () => {
     const images = [bgOne, bgTwo, bgThree, bgFour, bgFive]; // Replace with your image paths
@@ -20,7 +22,7 @@ const DigitalSculpting = () => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
                 setOpacity(1); // Set opacity back to 1 for the fade-in effect
             }, 800); // Adjust the duration for the fade-out effect (in milliseconds)
-        }, 4000); // Change the interval time (in milliseconds) as needed
+        }, TRANSITION_TIME); // Change the interval time (in milliseconds) as needed
 
         return () => clearInterval(intervalId); // Cleanup the interval on component unmount
     }, [currentImageIndex, images.length]);

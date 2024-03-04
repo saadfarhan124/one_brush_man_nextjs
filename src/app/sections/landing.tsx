@@ -14,6 +14,7 @@ import bgTen from "../../../public/landing_bg/bg_9.png";
 import bgEleven from "../../../public/landing_bg/bg_10.png";
 import bgTwelve from "../../../public/landing_bg/bg_11.png";
 import bgThirteen from "../../../public/landing_bg/bg_12.png";
+import {TRANSITION_TIME} from "@/app/constants";
 
 
 
@@ -25,7 +26,7 @@ const Landing = () => {
         const intervalId = setInterval(() => {
             // Increment the image index, and wrap around to the first image if it exceeds the array length
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 2000); // Change the interval time (in milliseconds) as needed
+        }, TRANSITION_TIME); // Change the interval time (in milliseconds) as needed
 
         return () => clearInterval(intervalId); // Cleanup the interval on component unmount
     }, [currentImageIndex, images.length]);
@@ -37,10 +38,10 @@ const Landing = () => {
                     key={index}
                     src={image}
                     alt="Your Image Alt Text"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
                     style={{
                         opacity: index === currentImageIndex ? 1 : 0,
+                        objectFit: "cover",
                         transition: 'opacity 2s ease-in-out',
                         objectPosition: 'center center', // Center the image content
                     }}

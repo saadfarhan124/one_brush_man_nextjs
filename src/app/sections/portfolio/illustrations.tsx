@@ -7,6 +7,7 @@ import bgFour from "../../../../public/illustrations_bg/bg_4.png";
 import bgFive from "../../../../public/illustrations_bg/bg_5.png";
 import bgSix from "../../../../public/illustrations_bg/bg_6.png";
 import bgSeven from "../../../../public/illustrations_bg/bg_7.png";
+import {TRANSITION_TIME} from "@/app/constants";
 
 
 const Illustration = () => {
@@ -22,7 +23,7 @@ const Illustration = () => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
                 setOpacity(1); // Set opacity back to 1 for the fade-in effect
             }, 800); // Adjust the duration for the fade-out effect (in milliseconds)
-        }, 4000); // Change the interval time (in milliseconds) as needed
+        }, TRANSITION_TIME); // Change the interval time (in milliseconds) as needed
 
         return () => clearInterval(intervalId); // Cleanup the interval on component unmount
     }, [currentImageIndex, images.length]);
