@@ -44,8 +44,14 @@ const Navbar = () => {
     xl:flex-row xl:justify-between xl:items-center xl:pb-2 xl:px-32 text-white 
     w-full z-50 sticky top-0 transition-all ${scrolled ? 'bg-black pt-5' : 'bg-transparent pt-20'}`;
 
+    const styles = {
+        centerContent: {
+            paddingLeft: "25%", paddingRight: "25%"
+        }
+    }
+
     return (
-        <nav className={navbarClasses}>
+        <nav style={styles.centerContent} className={navbarClasses}>
             <div className="flex items-center mb-4 md:mb-0 lg:mb-0 xl:mb-0">
                 <Image src={navLogo} alt="Logo" width={200} height={50} />
             </div>
