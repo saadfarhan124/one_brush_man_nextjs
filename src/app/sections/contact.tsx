@@ -1,5 +1,8 @@
+"use client"
 import Image from "next/image";
 import contactLogo from "../../../public/logo_contact.png";
+import React, { useState } from "react";
+import sendEmail from "../utilities";
 
 const Contact = () => {
     const styles = {
@@ -7,38 +10,69 @@ const Contact = () => {
             paddingLeft: "25%", paddingRight: "25%"
         }
     }
+
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (e: any) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        // Call the sendEmail function with the form data
+        await sendEmail(formData, setLoading);
+        // Reset the form data after successful submission
+        setFormData({
+            name: '',
+            email: '',
+            message: '',
+        });
+    };
     return (
         <div id="contact" style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20 pb-20">
             <div className="pt-20">
                 <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold	">Get In Touch</p>
                 <div className="grid grid-cols-12 gap-3 p-15 pt-10">
                     <div className="col-span-12 md:col-span-6 relative">
-                        {/* Name Input */}
-                        <div className="mb-4">
-                            <label htmlFor="name" className="block text-white text-base font-normal mb-2">Name</label>
-                            <input type="text" id="name" name="name" className="w-full bg-black text-white border-gray-400 border p-2 rounded-md"
-                            />
-                        </div>
+                        <form onSubmit={handleSubmit}>
+                            {/* Name Input */}
+                            <div className="mb-4">
+                                <label htmlFor="name" className="block text-white text-base font-normal mb-2">Name</label>
+                                <input type="text" id="name" name="name" value={formData.name}
+                                    onChange={handleChange} className="w-full bg-black text-white border-gray-400 border p-2 rounded-md"
+                                />
+                            </div>
 
-                        {/* Email Input */}
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-white text-base font-normal mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" className="w-full bg-black text-white border-gray-400 border p-2 rounded-md"
-                            />
-                        </div>
+                            {/* Email Input */}
+                            <div className="mb-4">
+                                <label htmlFor="email" className="block text-white text-base font-normal mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" value={formData.email}
+                                    onChange={handleChange} className="w-full bg-black text-white border-gray-400 border p-2 rounded-md"
+                                />
+                            </div>
 
-                        {/* Message Textarea */}
-                        <div className="mb-6">
-                            <label htmlFor="message" className="block text-white text-base font-normal mb-2">Message</label>
-                            <textarea id="message" name="message" rows={4} className="w-full bg-black text-white border-gray-400 border p-2 rounded-md"
-                            ></textarea>
-                        </div>
-
-
-                        {/* Submit Button */}
-                        <div className="flex justify-center md:justify-start">
-                            <button type="submit" className="bg-themegray text-white px-4 py-2 rounded-md hover:bg-red transition">Submit</button>
-                        </div>
+                            {/* Message Textarea */}
+                            <div className="mb-6">
+                                <label htmlFor="message" className="block text-white text-base font-normal mb-2">Message</label>
+                                <textarea id="message" name="message" value={formData.message}
+                                    onChange={handleChange} rows={4} className="w-full bg-black text-white border-gray-400 border p-2 rounded-md"
+                                ></textarea>
+                            </div>
+                            {/* Submit Button */}
+                            <div className="flex justify-center md:justify-start">
+                                <button type="submit" className="bg-themegray text-white px-4 py-2 rounded-md hover:bg-red transition" disabled={loading}>
+                                    {loading ? "Sending..." : "Submit"}
+                                </button>                            </div>
+                        </form>
                     </div>
                     <div className="pt-5 md:pl-5  lg:pl-0 md:pt-0 col-span-12 md:col-span-6 relative cursor-pointer flex items-center lg:justify-center">
                         <Image className="w-60 rounded-lg" src={contactLogo} alt="" />
