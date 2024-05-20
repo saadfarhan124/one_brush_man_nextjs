@@ -6,8 +6,7 @@ import bgTwo from "../../../../public/sculpting_bg/bg_2.png";
 import bgThree from "../../../../public/sculpting_bg/bg_3.png";
 import bgFour from "../../../../public/sculpting_bg/bg_4.png";
 import bgFive from "../../../../public/sculpting_bg/bg_5.png";
-import {TRANSITION_TIME} from "@/app/constants";
-
+import { TRANSITION_TIME } from '@/app/constants';
 
 const DigitalSculpting = () => {
     const images = [bgOne, bgTwo, bgThree, bgFour, bgFive]; // Replace with your image paths

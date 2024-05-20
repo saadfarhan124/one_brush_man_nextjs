@@ -7,10 +7,9 @@ import bgFour from "../../../../public/illustrations_bg/bg_4.png";
 import bgFive from "../../../../public/illustrations_bg/bg_5.png";
 import bgSix from "../../../../public/illustrations_bg/bg_6.png";
 import bgSeven from "../../../../public/illustrations_bg/bg_7.png";
-import {TRANSITION_TIME} from "@/app/constants";
+import { PortfolioProps, TRANSITION_TIME } from '@/app/constants';
 
-
-const Illustration = () => {
+const Illustration: React.FC<PortfolioProps> = ({ openGallery }) => {
     const images = [bgTwo, bgThree, bgFour, bgFive, bgSix, bgSeven]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
@@ -38,7 +37,7 @@ const Illustration = () => {
         },
     }
     return (
-        <div className="relative cursor-pointer">
+        <div className="relative cursor-pointer" onClick={openGallery}>
             <style jsx>{`
                 .image-transition {
                     transition: opacity 2s ease-in-out;

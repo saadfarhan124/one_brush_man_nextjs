@@ -6,10 +6,10 @@ import bgThree from "../../../../public/character_bg/bg_2.png";
 import bgFour from "../../../../public/character_bg/bg_3.png";
 import bgFive from "../../../../public/character_bg/bg_4.png";
 import bgSix from "../../../../public/character_bg/bg_5.png";
-import {TRANSITION_TIME} from "@/app/constants";
+import { TRANSITION_TIME, PortfolioProps } from '@/app/constants';
 
 
-const CharacterDesign = () => {
+const CharacterDesign: React.FC<PortfolioProps> = ({openGallery}) => {
     const images = [bgTwo, bgThree, bgFour, bgFive, bgSix]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
@@ -37,7 +37,7 @@ const CharacterDesign = () => {
         },
     }
     return (
-        <div className="col-span-12 md:col-span-5 relative cursor-pointer">
+        <div className="col-span-12 md:col-span-5 relative cursor-pointer" onClick={openGallery}>
             <Image
                 src={images[currentImageIndex]}
                 alt="Your Image Alt Text"

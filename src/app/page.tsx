@@ -24,6 +24,7 @@ export default function Home() {
       paddingLeft: "25%", paddingRight: "25%"
     }
   }
+
   return (
     <main>
       <Navbar />

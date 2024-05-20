@@ -6,9 +6,10 @@ import bgTwo from "../../../../public/concept_art_bg/bg_2.png";
 import bgThree from "../../../../public/concept_art_bg/bg_3.png";
 import bgFour from "../../../../public/concept_art_bg/bg_4.png";
 import bgFive from "../../../../public/concept_art_bg/bg_5.png";
-import {TRANSITION_TIME} from "@/app/constants";
+import { PortfolioProps, TRANSITION_TIME } from '@/app/constants';
 
-const ConceptArt = () => {
+
+const ConceptArt:  React.FC<PortfolioProps> = ({openGallery}) => {
     const images = [bgOne, bgTwo, bgThree, bgFour, bgFive]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
@@ -36,7 +37,7 @@ const ConceptArt = () => {
         },
     }
     return (
-        <div className="col-span-12 md:col-span-8 relative cursor-pointer">
+        <div className="col-span-12 md:col-span-8 relative cursor-pointer" onClick={openGallery}>
             <Image
                 src={images[currentImageIndex]}
                 alt="Your Image Alt Text"

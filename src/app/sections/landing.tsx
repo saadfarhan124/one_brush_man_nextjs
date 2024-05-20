@@ -14,8 +14,7 @@ import bgTen from "../../../public/landing_bg/bg_9.png";
 import bgEleven from "../../../public/landing_bg/bg_10.png";
 import bgTwelve from "../../../public/landing_bg/bg_11.png";
 import bgThirteen from "../../../public/landing_bg/bg_12.png";
-import {TRANSITION_TIME} from "@/app/constants";
-
+import { TRANSITION_TIME } from '../constants';
 
 
 const Landing = () => {

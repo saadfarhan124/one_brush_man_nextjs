@@ -5,8 +5,7 @@ import bgOne from "../../../../public/comicbook_bg/bg_1.png";
 import bgTwo from "../../../../public/comicbook_bg/bg_2.png";
 import bgThree from "../../../../public/comicbook_bg/bg_3.png";
 import bgFour from "../../../../public/comicbook_bg/bg_4.png";
-import {TRANSITION_TIME} from "@/app/constants";
-
+import { TRANSITION_TIME } from '@/app/constants';
 const ComicBook = () => {
     const images = [bgOne, bgTwo, bgThree, bgFour]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
