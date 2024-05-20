@@ -83,11 +83,15 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                 leaveFrom="opacity-50 translate-x-0"
                 leaveTo="opacity-0 -translate-x-10"
               >
-                <img
-                  src={images[prevIndex]}
-                  alt={`img-${prevIndex}`}
-                  className="w-1/4 opacity-50 absolute left-0"
-                />
+                <div className="relative w-full h-full hidden sm:block">
+                  <Image
+                    src={images[prevIndex]}
+                    alt={`img-${prevIndex}`}
+                    layout="fill"
+                    objectFit="contain"
+                    className="opacity-80 "
+                  />
+                </div>
               </Transition>
 
               <Transition
@@ -100,13 +104,16 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                 leave="transform transition ease-in-out duration-500 sm:duration-700"
                 leaveFrom="opacity-50 translate-x-0"
                 leaveTo="opacity-0 translate-x-10"
-                
               >
-                <img
-                  src={images[nextIndex]}
-                  alt={`img-${nextIndex}`}
-                  className="w-1/4 opacity-50 absolute right-0"
-                />
+                <div className="relative w-full h-full hidden sm:block">
+                  <Image
+                    src={images[nextIndex]}
+                    alt={`img-${nextIndex}`}
+                    layout="fill"
+                    objectFit="contain"
+                    className="opacity-80"
+                  />
+                </div>
               </Transition>
             </div>
             <button
