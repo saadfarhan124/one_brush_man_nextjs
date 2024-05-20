@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 import navLogo from "../../../public/logo.png";
 
-
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +10,6 @@ const Navbar = () => {
     const handleMenuClick = () => {
         setMenuOpen(!menuOpen);
     };
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,13 +40,13 @@ const Navbar = () => {
     md:flex-row md:justify-between md:items-center md:pb-2 md:px-16 
     lg:flex-row lg:justify-between lg:items-center lg:pb-2 lg:px-24 
     xl:flex-row xl:justify-between xl:items-center xl:pb-2 xl:px-32 text-white 
-    w-full z-50 sticky top-0 transition-all ${scrolled ? 'bg-black pt-5' : 'bg-transparent pt-20'}`;
+    w-full z-50 top-0 transition-all ${scrolled ? 'bg-black pt-5 sticky top-0' : 'bg-transparent pt-20 absolute'}`;
 
     const styles = {
         centerContent: {
             paddingLeft: "25%", paddingRight: "25%"
         }
-    }
+    };
 
     return (
         <nav style={styles.centerContent} className={navbarClasses}>
@@ -106,5 +104,6 @@ const Navbar = () => {
             </div>
         </nav>
     )
-}
+};
+
 export default Navbar;

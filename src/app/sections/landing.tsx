@@ -33,7 +33,7 @@ const Landing = () => {
     }, [currentImageIndex, images.length]);
 
     return (
-        <div className="flex flex-col items-center justify-between min-h-screen">
+        <div className="flex flex-col items-center justify-between min-h-screen relative overflow-hidden">
             {images.map((image, index) => (
                 <Image
                     key={index}

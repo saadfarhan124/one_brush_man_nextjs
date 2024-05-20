@@ -27,17 +27,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
 
   const close = () => {
     setCurrentIndex(0);
+    setIsNext(true);
     closeModal();
-  }
-
-  const transitionClasses = {
-    enter: 'transform transition ease-in-out duration-500 sm:duration-700',
-    enterFrom: 'translate-x-full',
-    enterTo: 'translate-x-0',
-    leave: 'transform transition ease-in-out duration-500 sm:duration-700',
-    leaveFrom: 'translate-x-0',
-    leaveTo: 'translate-x-full',
   };
+
+  const prevIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+  const nextIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
 
   return (
     <div className="flex flex-wrap justify-center gap-2">
@@ -61,45 +56,58 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                 key={currentIndex}
                 show={true}
                 appear={true}
-                enter='transform transition ease-in-out duration-500 sm:duration-700'
+                enter="transform transition ease-in-out duration-500 sm:duration-700"
                 enterFrom={isNext ? 'translate-x-full' : '-translate-x-full'}
-                enterTo='translate-x-0' 
-                leave='transform transition ease-in-out duration-500 sm:duration-700'
-                leaveFrom='translate-x-0'
+                enterTo="translate-x-0"
+                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                leaveFrom="translate-x-0"
                 leaveTo={isNext ? 'translate-x-full' : '-translate-x-full'}
               >
-                {/* <Transition
-    key={currentIndex}
-    show={true}
-    appear={true}
-    enter='transform transition ease-in-out duration-500 sm:duration-700'
-    enterFrom='-translate-x-full'
-    enterTo='translate-x-0'
-    leave='transform transition ease-in-out duration-500 sm:duration-700'
-    leaveFrom='translate-x-0'
-    leaveTo='-translate-x-full'
-> */}
                 <Image
                   src={images[currentIndex]}
                   alt={`img-${currentIndex}`}
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                   className="w-full h-full object-contain z-50"
                 />
               </Transition>
 
-              
-              <img
-                src={currentIndex > 0 ? images[currentIndex - 1] : images[images.length - 1]}
-                className="w-1/4 opacity-50 absolute left-0"
-              />
+              <Transition
+                key={`prev-${prevIndex}`}
+                show={true}
+                appear={true}
+                enter="transform transition ease-in-out duration-500 sm:duration-700"
+                enterFrom="opacity-0 translate-x-10"
+                enterTo="opacity-50 translate-x-0"
+                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                leaveFrom="opacity-50 translate-x-0"
+                leaveTo="opacity-0 -translate-x-10"
+              >
+                <img
+                  src={images[prevIndex]}
+                  alt={`img-${prevIndex}`}
+                  className="w-1/4 opacity-50 absolute left-0"
+                />
+              </Transition>
 
-              <img
-                src={currentIndex < images.length - 1 ? images[currentIndex + 1] : images[0]}
-                alt={`img-${currentIndex + 1}`}
-                className="w-1/4 opacity-50 absolute right-0"
-              />
-
+              <Transition
+                key={`next-${nextIndex}`}
+                show={true}
+                appear={true}
+                enter="transform transition ease-in-out duration-500 sm:duration-700"
+                enterFrom="opacity-0 -translate-x-10"
+                enterTo="opacity-50 translate-x-0"
+                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                leaveFrom="opacity-50 translate-x-0"
+                leaveTo="opacity-0 translate-x-10"
+                
+              >
+                <img
+                  src={images[nextIndex]}
+                  alt={`img-${nextIndex}`}
+                  className="w-1/4 opacity-50 absolute right-0"
+                />
+              </Transition>
             </div>
             <button
               className="bg-black bg-opacity-50 hover:text-red text-white p-2 text-2xl absolute right-4 z-[1000]"
@@ -125,3 +133,5 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
 };
 
 export default ImageGallery;
+
+// "w-1/4 opacity-50 absolute right-0"
