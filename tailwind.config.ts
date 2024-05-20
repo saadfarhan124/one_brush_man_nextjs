@@ -18,6 +18,15 @@ const config: Config = {
         'themegray' : "#444444",
         'themedarkgray': "#0E0E0E"
       },
+      keyframes: {
+        'zoom-in': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
+        },
+      },
+      animation: {
+        'zoom-in': 'zoom-in 10s ease-in-out forwards',
+      },
     },
   },
  

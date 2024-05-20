@@ -1,24 +1,26 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Image from "next/image";
-import bgOne from "../../../public/landing_bg/bg_1.png";
-import bgTwo from "../../../public/landing_bg/bg_2.png";
-import bgThree from "../../../public/landing_bg/bg_13.png";
-import bgFour from "../../../public/landing_bg/bg_3.png";
-import bgFive from "../../../public/landing_bg/bg_4.png";
-import bgSix from "../../../public/landing_bg/bg_5.png";
-import bgSeven from "../../../public/landing_bg/bg_6.png";
-import bgEight from "../../../public/landing_bg/bg_7.png";
-import bgNine from "../../../public/landing_bg/bg_8.png";
-import bgTen from "../../../public/landing_bg/bg_9.png";
-import bgEleven from "../../../public/landing_bg/bg_10.png";
-import bgTwelve from "../../../public/landing_bg/bg_11.png";
-import bgThirteen from "../../../public/landing_bg/bg_12.png";
+
 import { TRANSITION_TIME } from '../constants';
 
 
 const Landing = () => {
-    const images = [bgOne, bgTwo, bgThree, bgFour, bgFive, bgSix, bgSeven, bgEight, bgNine, bgTen, bgEleven, bgTwelve, bgThirteen]; // Replace with your image paths
+    const images = [
+        "https://storage.googleapis.com/website_images_obm/landing/bg_1.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_10.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_11.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_12.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_13.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_2.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_3.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_4.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_5.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_6.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_7.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_8.png",
+        "https://storage.googleapis.com/website_images_obm/landing/bg_9.png"
+    ];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
@@ -38,6 +40,7 @@ const Landing = () => {
                     src={image}
                     alt="Your Image Alt Text"
                     fill
+                    className={`${index === currentImageIndex ? 'animate-zoom-in' : 'scale-110'}`} // Apply animation class or final scale class
                     style={{
                         opacity: index === currentImageIndex ? 1 : 0,
                         objectFit: "cover",

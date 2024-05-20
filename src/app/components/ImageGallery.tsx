@@ -11,13 +11,16 @@ interface ImageGalleryProps {
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeModal }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isNext, setIsNext] = useState<boolean>(false);
 
   const goToPrevious = () => {
+    setIsNext(false);
     const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const goToNext = () => {
+    setIsNext(true);
     const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -26,6 +29,15 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
     setCurrentIndex(0);
     closeModal();
   }
+
+  const transitionClasses = {
+    enter: 'transform transition ease-in-out duration-500 sm:duration-700',
+    enterFrom: 'translate-x-full',
+    enterTo: 'translate-x-0',
+    leave: 'transform transition ease-in-out duration-500 sm:duration-700',
+    leaveFrom: 'translate-x-0',
+    leaveTo: 'translate-x-full',
+  };
 
   return (
     <div className="flex flex-wrap justify-center gap-2">
@@ -49,13 +61,24 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                 key={currentIndex}
                 show={true}
                 appear={true}
-                enter="transition ease-in-out duration-500 transform"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="transition ease-in-out duration-300 transform"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+                enter='transform transition ease-in-out duration-500 sm:duration-700'
+                enterFrom={isNext ? 'translate-x-full' : '-translate-x-full'}
+                enterTo='translate-x-0' 
+                leave='transform transition ease-in-out duration-500 sm:duration-700'
+                leaveFrom='translate-x-0'
+                leaveTo={isNext ? 'translate-x-full' : '-translate-x-full'}
               >
+                {/* <Transition
+    key={currentIndex}
+    show={true}
+    appear={true}
+    enter='transform transition ease-in-out duration-500 sm:duration-700'
+    enterFrom='-translate-x-full'
+    enterTo='translate-x-0'
+    leave='transform transition ease-in-out duration-500 sm:duration-700'
+    leaveFrom='translate-x-0'
+    leaveTo='-translate-x-full'
+> */}
                 <Image
                   src={images[currentIndex]}
                   alt={`img-${currentIndex}`}
@@ -65,6 +88,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                 />
               </Transition>
 
+              
               <img
                 src={currentIndex > 0 ? images[currentIndex - 1] : images[images.length - 1]}
                 className="w-1/4 opacity-50 absolute left-0"
