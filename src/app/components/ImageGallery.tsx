@@ -13,6 +13,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isNext, setIsNext] = useState<boolean>(false);
 
+
+ 
   const goToPrevious = () => {
     setIsNext(false);
     const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
@@ -56,10 +58,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                 key={currentIndex}
                 show={true}
                 appear={true}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
+                enter="transform transition ease-in-out duration-200 sm:duration-200"
                 enterFrom={isNext ? 'translate-x-full' : '-translate-x-full'}
                 enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                leave="transform transition ease-in-out duration-200 sm:duration-200"
                 leaveFrom="translate-x-0"
                 leaveTo={isNext ? 'translate-x-full' : '-translate-x-full'}
               >
@@ -126,7 +128,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
               {images.map((_, index) => (
                 <span
                   key={index}
-                  className={`h-3 w-3 rounded-full inline-block mx-1 cursor-pointer ${index === currentIndex ? 'bg-red' : 'bg-gray-500'
+                  className={`h-2 w-2 rounded-full inline-block mx-1 cursor-pointer ${index === currentIndex ? 'bg-red' : 'bg-gray-500'
                     }`}
                   onClick={() => setCurrentIndex(index)}
                 ></span>
