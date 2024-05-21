@@ -1,4 +1,3 @@
-"use client"
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import bgOne from "../../../../public/comicbook_bg/bg_1.png";
