@@ -109,16 +109,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
             >
               &#10095;
             </button>
-            <div className="absolute bottom-4 w-full text-center z-50">
-              {images.map((_, index) => (
-                <span
-                  key={index}
-                  className={`h-2 w-2 rounded-full inline-block mx-1 cursor-pointer ${index === currentIndex ? 'bg-red' : 'bg-gray-500'
-                    }`}
-                  onClick={() => setCurrentIndex(index)}
-                ></span>
-              ))}
-            </div>
+           
           </div>
         </div>
       )}
