@@ -38,11 +38,7 @@ const Illustration: React.FC<PortfolioProps> = ({ openGallery }) => {
     }
     return (
         <div className="relative cursor-pointer" onClick={openGallery}>
-            <style jsx>{`
-                .image-transition {
-                    transition: opacity 2s ease-in-out;
-                }
-            `}</style>
+           
             <Image
                 src={images[currentImageIndex]}
                 alt="Your Image Alt Text"

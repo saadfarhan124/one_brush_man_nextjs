@@ -43,12 +43,18 @@ const Portfolio = () => {
         '/concept_art_bg/bg_5.png',
     ];
     const illustrationsImages: string[] = [
-        '/illustrations_bg/bg_2.png',
-        '/illustrations_bg/bg_3.png',
-        '/illustrations_bg/bg_4.png',
-        '/illustrations_bg/bg_5.png',
-        '/illustrations_bg/bg_6.png',
-        '/illustrations_bg/bg_7.png',
+        "https://storage.googleapis.com/website_images_obm/illustrations/0002.jpg",
+        "https://storage.googleapis.com/website_images_obm/illustrations/26171525_1648002488595933_1011977458215309354_o.jpg",
+        "https://storage.googleapis.com/website_images_obm/illustrations/Azoth.jpg",
+        "https://storage.googleapis.com/website_images_obm/illustrations/CD-(fantasy)-02_0001_Layer-13.png",
+        "https://storage.googleapis.com/website_images_obm/illustrations/CD-(fantasy)-02_0002_Layer-12.png",
+        "https://storage.googleapis.com/website_images_obm/illustrations/CD-(fantasy)-02_0003_Layer-11.png",
+        "https://storage.googleapis.com/website_images_obm/illustrations/CD-(fantasy)-02_0004_Layer-10.png",
+        "https://storage.googleapis.com/website_images_obm/illustrations/CD-(fantasy)-02_0008_Layer-8.png",
+        "https://storage.googleapis.com/website_images_obm/illustrations/CD-(fantasy)-02_0040_print.png",
+        "https://storage.googleapis.com/website_images_obm/illustrations/Chains%20of%20Mephetis%204000%20Finished%20v3.jpg",
+        "https://storage.googleapis.com/website_images_obm/illustrations/Death%20Touch%20finished%20v4.jpg",
+        "https://storage.googleapis.com/website_images_obm/illustrations/Destructive%20Deliberationt_4000px%20finished.jpg",
     ];
     const sculptingImages: string[] = [
         '/sculpting_bg/bg_1.png',
