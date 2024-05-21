@@ -6,9 +6,10 @@ import bgTwo from "../../../../public/sculpting_bg/bg_2.png";
 import bgThree from "../../../../public/sculpting_bg/bg_3.png";
 import bgFour from "../../../../public/sculpting_bg/bg_4.png";
 import bgFive from "../../../../public/sculpting_bg/bg_5.png";
-import { TRANSITION_TIME } from '@/app/constants';
+import { PortfolioProps, TRANSITION_TIME } from '@/app/constants';
 
-const DigitalSculpting = () => {
+const DigitalSculpting: React.FC<PortfolioProps> = ({openGallery}) => {
+
     const images = [bgOne, bgTwo, bgThree, bgFour, bgFive]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
@@ -35,7 +36,7 @@ const DigitalSculpting = () => {
         },
     }
     return (
-        <div className="col-span-12 md:col-span-7 relative cursor-pointer">
+        <div className="col-span-12 md:col-span-7 relative cursor-pointer" onClick={openGallery}>
             <Image
                 src={images[currentImageIndex]}
                 alt="Your Image Alt Text"

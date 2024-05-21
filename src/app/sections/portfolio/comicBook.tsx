@@ -5,8 +5,8 @@ import bgOne from "../../../../public/comicbook_bg/bg_1.png";
 import bgTwo from "../../../../public/comicbook_bg/bg_2.png";
 import bgThree from "../../../../public/comicbook_bg/bg_3.png";
 import bgFour from "../../../../public/comicbook_bg/bg_4.png";
-import { TRANSITION_TIME } from '@/app/constants';
-const ComicBook = () => {
+import { PortfolioProps, TRANSITION_TIME } from '@/app/constants';
+const ComicBook: React.FC<PortfolioProps> = ({ openGallery }) => {
     const images = [bgOne, bgTwo, bgThree, bgFour]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
@@ -33,7 +33,7 @@ const ComicBook = () => {
         },
     }
     return (
-        <div className="col-span-12 md:col-span-4 relative cursor-pointer">
+        <div className="col-span-12 md:col-span-4 relative cursor-pointer" onClick={openGallery}>
             <Image
                 src={images[currentImageIndex]}
                 alt="Your Image Alt Text"
