@@ -39,7 +39,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
   return (
     <div className="flex flex-wrap justify-center gap-2">
       {openModal && (
-        <div id='gallery' className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-85">
+        <div id='gallery' className="fixed inset-0 z-50 flex items-center justify-center bg-black">
           <span
             className="absolute z-[1000] top-4 right-8 text-white hover:text-red text-4xl font-bold cursor-pointer"
             onClick={close}
@@ -70,53 +70,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                   alt={`img-${currentIndex}`}
                   fill
                   style={{ objectFit: "contain" }}
-                  className="w-full h-full object-contain z-50"
+                  className="w-full z-50"
                 />
               </Transition>
 
-              <Transition
-                key={`prev-${prevIndex}`}
-                show={true}
-                appear={true}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="opacity-0 translate-x-10"
-                enterTo="opacity-50 translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
-                leaveFrom="opacity-50 translate-x-0"
-                leaveTo="opacity-0 -translate-x-10"
-              >
-                <div className="relative w-full h-full hidden sm:block">
-                  <Image
-                    src={images[prevIndex]}
-                    alt={`img-${prevIndex}`}
-                    layout="fill"
-                    objectFit="contain"
-                    className="opacity-80 "
-                  />
-                </div>
-              </Transition>
-
-              <Transition
-                key={`next-${nextIndex}`}
-                show={true}
-                appear={true}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="opacity-0 -translate-x-10"
-                enterTo="opacity-50 translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
-                leaveFrom="opacity-50 translate-x-0"
-                leaveTo="opacity-0 translate-x-10"
-              >
-                <div className="relative w-full h-full hidden sm:block">
-                  <Image
-                    src={images[nextIndex]}
-                    alt={`img-${nextIndex}`}
-                    layout="fill"
-                    objectFit="contain"
-                    className="opacity-80"
-                  />
-                </div>
-              </Transition>
+             
             </div>
             <button
               className="bg-black bg-opacity-50 hover:text-red text-white p-2 text-2xl absolute right-4 z-[1000]"
