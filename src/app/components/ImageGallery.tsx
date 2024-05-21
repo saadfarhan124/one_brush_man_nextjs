@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import Image from 'next/image';
 import Loader from './loader';
@@ -41,8 +41,25 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
     closeModal();
   };
 
-  const prevIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-  const nextIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        goToPrevious();
+      } else if (event.key === 'ArrowRight') {
+        goToNext();
+      }else if (event.key === 'Escape') {
+        close();
+      }
+    };
+
+    if (openModal) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [openModal, currentIndex]); // Dependencies to reattach listener when modal or currentIndex changes
 
   return (
     <div className="flex flex-wrap justify-center gap-2">
@@ -85,8 +102,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
                   onLoad={handleImageLoad}
                 />
               </Transition>
-
-
             </div>
             <button
               className="bg-black bg-opacity-50 hover:text-red text-white p-2 text-2xl absolute right-4 z-[1000]"

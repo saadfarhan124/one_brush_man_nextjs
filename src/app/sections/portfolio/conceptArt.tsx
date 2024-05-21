@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import bgOne from "../../../../public/concept_art_bg/bg_1.png";
-import bgTwo from "../../../../public/concept_art_bg/bg_2.png";
 import bgThree from "../../../../public/concept_art_bg/bg_3.png";
 import bgFour from "../../../../public/concept_art_bg/bg_4.png";
 import bgFive from "../../../../public/concept_art_bg/bg_5.png";
@@ -10,7 +9,7 @@ import { PortfolioProps, TRANSITION_TIME } from '@/app/constants';
 
 
 const ConceptArt:  React.FC<PortfolioProps> = ({openGallery}) => {
-    const images = [bgOne, bgTwo, bgThree, bgFour, bgFive]; // Replace with your image paths
+    const images = [bgOne, bgThree, bgFour, bgFive]; // Replace with your image paths
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
 
