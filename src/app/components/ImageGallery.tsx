@@ -53,7 +53,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal, closeMod
             >
               &#10094;
             </button>
-            <div className="relative flex items-center justify-center w-full h-full">
+            <div className="relative flex items-center justify-center w-full h-4/5">
               <Transition
                 key={currentIndex}
                 show={true}
