@@ -6,12 +6,29 @@ import Head from 'next/head'
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata: Metadata = {
-//   title: "3D Character Concept Art & Design | Hire Saad Irfan",
-//   description: "I am Saad Irfan, a concept artist, 3D modeler and illustrator. My work includes The Glassworker, Flesh & Blood, Habrok MMA gear, and The Secret Life of Cooper Bennett. Let's bring your vision to life!",
-//   image: "../public/logo.png", // Replace with your actual logo image URL
-//   url:  "https://www.onebrushman.com" // Replace with your actual website URL
-// };
+export const metadata: Metadata = {
+  title: "3D Character Concept Art & Design | Hire Saad Irfan",
+  description: "I am Saad Irfan, a concept artist, 3D modeler and illustrator. My work includes The Glassworker, Flesh & Blood, Habrok MMA gear, and The Secret Life of Cooper Bennett. Let's bring your vision to life!",
+  openGraph: {
+    type: "website",
+    url: "https://www.onebrushman.com/",
+    title: "3D Character Concept Art & Design | Hire Saad Irfan",
+    description: "I am Saad Irfan, a concept artist, 3D modeler and illustrator. My work includes The Glassworker, Flesh & Blood, Habrok MMA gear, and The Secret Life of Cooper Bennett. Let's bring your vision to life!",
+    images: [
+      {
+        url: "your_image_url_here",
+        width: 800,
+        height: 600,
+        alt: "Saad Irfan's Artwork"
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "3D Character Concept Art & Design | Hire Saad Irfan",
+    description: "I am Saad Irfan, a concept artist, 3D modeler and illustrator. My work includes The Glassworker, Flesh & Blood, Habrok MMA gear, and The Secret Life of Cooper Bennett. Let's bring your vision to life!",
+  }
+};
 
 export default function RootLayout({
   children,
