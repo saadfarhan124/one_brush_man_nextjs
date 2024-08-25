@@ -288,7 +288,7 @@ const Portfolio = () => {
     }
 
     return (
-        <div id="portfolio">
+        <div id="portfolio" style={{backgroundColor: "black"}}>
             <ImageGallery images={images} openModal={openModal} closeModal={closeModal} />
 
             <div className="flex flex-col justify-between">
