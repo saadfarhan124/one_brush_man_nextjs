@@ -293,7 +293,7 @@ const Portfolio = () => {
 
             <div className="flex flex-col justify-between">
                 <div className="flex flex-col items-center w-full justify-endx pt-20 md:pt-10 lg:pt-10 xl:pt-10">
-                    <p className="text-xl md:text-2xl lg:text-4xl xl:text-4xl text-center mb-2 font-extrabold">Portfolio</p>
+                    <p className="text-xl md:text-2xl lg:text-4xl xl:text-4xl text-center mb-2 font-extrabold text-white">Portfolio</p>
                     <div className="border-b border-red mx-auto w-28 lg:w-44" style={{ borderWidth: 2 }} />
                 </div>
             </div>

@@ -41,7 +41,7 @@ const Contact = () => {
     return (
         <div id="contact" style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20 pb-20">
             <div className="pt-20">
-                <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold color-white">Get In Touch</p>
+                <p className="text-2xl md:text-4xl lg:text-6xl xl:text-6xl mb-2 font-extrabold text-white">Get In Touch</p>
                 <div className="grid grid-cols-12 gap-3 p-15 pt-10">
                     <div className="col-span-12 md:col-span-6 relative">
                         <form onSubmit={handleSubmit}>
