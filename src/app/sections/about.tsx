@@ -1,7 +1,8 @@
 const About = () => {
     const styles = {
         centerContent: {
-            paddingLeft: "25%", paddingRight: "25%"
+            paddingLeft: "25%", paddingRight: "25%",
+            backgroundColor: "black"
         }
     }
     return (
