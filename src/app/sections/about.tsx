@@ -8,7 +8,7 @@ const About = () => {
     return (
         <div id="about" style={styles.centerContent} className="pt-10 lg:pt-20 xl:pt-20">
             <div className="pt-20">
-                <p className="ctext-white text-center md:text-left text-lg md:text-2xl lg:text-3xl xl:text-3xl mb-2 font-extrabold">Saad Irfan</p>
+                <p className="text-white text-center md:text-left text-lg md:text-2xl lg:text-3xl xl:text-3xl mb-2 font-extrabold">Saad Irfan</p>
                 <div className="mx-auto md:mx-0 w-28 md:w-32 lg:w-40 border-b border-red" style={{ borderWidth: 2 }} />
 
                 <p className="pt-4 text-center md:text-left text-sm md:text-lg lg:text-xl xl:text-xl mb-2 font-normal text-white">Concept Art & Illustration</p>
