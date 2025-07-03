@@ -7,19 +7,15 @@ import Loader from '../components/loader';
 
 const Landing = () => {
     const images = [
-        "https://storage.googleapis.com/website_images_obm/landing/bg_1.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_10.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_11.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_12.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_13.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_2.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_3.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_4.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_5.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_6.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_7.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_8.png",
-        "https://storage.googleapis.com/website_images_obm/landing/bg_9.png"
+        "https://storage.googleapis.com/website_images_obm/landing/1.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/2.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/3.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/4.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/5.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/6.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/7.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/8.jpg",
+        "https://storage.googleapis.com/website_images_obm/landing/9.jpg",
     ];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
